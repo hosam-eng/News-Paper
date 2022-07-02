@@ -1,0 +1,38 @@
+﻿@model NewsPaper.Models.User
+@{
+    ViewBag.Title = "ch_pass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form action="ch_pass" method="post">
+    <table>
+        <tr>
+            <td>@Html.Label("Old")</td>
+            <td><input type="password" name="oldpass" /></td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(n => n.password)</td>
+            <td>@Html.PasswordFor(n => n.password)</td>
+            <td>@Html.ValidationMessageFor(n => n.password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.Confirm_password)</td>
+            <td>@Html.PasswordFor(n => n.Confirm_password)</td>
+            <td>@Html.ValidationMessageFor(n => n.Confirm_password)</td>
+        </tr>
+        <tr>
+            <td>@ViewBag.error</td>
+            <td>@ViewBag.success</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Confirm" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+

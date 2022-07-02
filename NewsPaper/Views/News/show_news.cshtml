@@ -1,0 +1,50 @@
+﻿@model SelectList
+@{
+    ViewBag.Title = "show_news";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="modal text-md-center" id="d1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Header
+            </div>
+            <div class="modal-body" id="d2">
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" value="close" data-dismiss="modal" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.DropDownList("newsid",Model,"..")
+<div id="ddl" >
+    <table class="table table-active">
+
+        @foreach (var item in ViewBag.news)
+        {
+            <tr>
+                <td>@item.title</td>
+                <td>@item._ref</td>
+                <td>@Ajax.ActionLink("View details", "detail", new {id=item.newsID},
+                  new AjaxOptions(){
+                    UpdateTargetId="d2",
+                    InsertionMode=InsertionMode.Replace,
+                    OnComplete="show"
+                })</td>
+               
+            </tr>
+        }
+    </table>
+</div>
+<script>
+    $("#newsid").on("change", function(){
+        let id = $("#newsid").val();
+        $("#ddl").load("/News/select_news/" + id);
+    })
+    function show() {
+        $("#d1").modal({ show :true })
+    }
+</script>

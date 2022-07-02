@@ -1,0 +1,45 @@
+﻿@model NewsPaper.Models.News
+@{
+    ViewBag.Title = "create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form action="create" method="post" enctype="multipart/form-data">
+    <table>
+
+        <tr>
+            <td>@Html.LabelFor(n => n.title)</td>
+            <td>@Html.TextBoxFor(n => n.title)</td>
+            <td>@Html.ValidationMessageFor(n => n.title)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.description)</td>
+            <td>@Html.TextBoxFor(n => n.description)</td>
+            <td>@Html.ValidationMessageFor(n => n.description)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n._ref)</td>
+            <td>@Html.TextBoxFor(n => n._ref)</td>
+            <td>@Html.ValidationMessageFor(n => n._ref)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.datehire)</td>
+            <td>@Html.EditorFor(n => n.datehire)</td>
+            <td>@Html.ValidationMessageFor(n => n.datehire)</td>
+        </tr>
+        <tr>
+            <td>
+    <label for="formFile" class="form-label">Photo</label></td>
+            <td>
+    <input class="form-control form-control-sm" width="100" type="file" name="photo"></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.catID)</td>
+            <td>@Html.DropDownListFor(n => n.catID, (SelectList)ViewBag.cat)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="create" /></td>
+        </tr>
+    </table>
+</form>

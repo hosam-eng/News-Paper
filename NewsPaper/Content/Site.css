@@ -1,0 +1,103 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#formlogin-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 18px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+#formlogin-div form{
+    padding:0 40px;
+    box-sizing:border-box;
+}
+form .txt-field{
+    width:100%; 
+    overflow:hidden;
+    font-size:16px;
+    padding:8px 0;
+    margin:8px 0;
+    border-bottom:1px solid #adadad;
+}
+
+.txt-field input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+}
+#btn-login {
+    width: 100%;
+    background-color: #1877F2;
+    padding: 10px;
+    font-size: 20px;
+    margin: 12px 0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+    #btn-login:hover {
+        background-color: #166FE5
+    }
+#btn-register {
+    width: 50%;
+    background-color: #36A420;
+    padding: 10px;
+    font-size: 15px;
+    margin: 12px 0;
+    border: none;
+    color:white;
+    border-radius: 4px;
+}
+#btn-register:hover {
+    background-color: #3e8e41
+}
+.line {
+    align-items: center;
+    border-bottom: 1px solid #adadad;
+    display: flex;
+    margin: 20px 16px;
+    text-align: center;
+}
+.email-error span {
+    position: absolute;
+    top: 55px;
+    left: -70px;
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    border-color: #555 transparent transparent transparent;
+}
+.pass-error span {
+    position: absolute;
+    top: 160px;
+    left: -60px;
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    border-color: #555 transparent transparent transparent;
+}

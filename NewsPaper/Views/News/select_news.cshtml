@@ -1,0 +1,23 @@
+﻿@using NewsPaper.Models
+@{ 
+    List<News> news = ViewBag.news;
+}
+
+<table class="table table-active">
+    @foreach (var item in news)
+    {
+    <tr>
+        <td>@Html.DisplayFor(n => item.title)</td>
+        <td>@Html.DisplayFor(n => item._ref)</td>
+        <td>
+            @Ajax.ActionLink("View details", "detail", new { id = item.newsID },
+                      new AjaxOptions()
+                       {
+                        UpdateTargetId = "d2",
+                        InsertionMode = InsertionMode.Replace,
+                        OnComplete = "show"
+                    })
+            </td>
+    </tr>
+    }
+</table>

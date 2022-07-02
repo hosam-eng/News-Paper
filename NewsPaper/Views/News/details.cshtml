@@ -1,0 +1,14 @@
+﻿@model NewsPaper.Models.News
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron text-center">
+    @Model.datehire<br />
+    <h2>@Model.title</h2>
+    <h5>@Model._ref</h5>
+    <h5>@Model.description</h5>
+    <img src="~/attach/@Model.photo" width="300" height="300" />
+</div>
+
+

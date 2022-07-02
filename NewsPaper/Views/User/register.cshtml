@@ -1,0 +1,47 @@
+﻿@model NewsPaper.Models.User
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>Register</title>
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+</head>
+<body style="background-color:#F0F2F5">
+    <div id="formlogin-div">
+        <form action="register" method="post">
+            <div class="txt-field">
+                @Html.TextBoxFor(n => n.name, new {@placeholder="Name"})
+                @Html.ValidationMessageFor(n => n.name)
+            </div>
+            <div class="txt-field">
+                @Html.TextBoxFor(n => n.email, new { @placeholder = "email address" })
+                @Html.ValidationMessageFor(n => n.email, "", new { @class = "email-error" })
+
+            </div>
+            <div class="txt-field">
+                @Html.PasswordFor(n => n.password, new { @placeholder = "New Password" })
+                @Html.ValidationMessageFor(n => n.password)
+            </div>
+            <div class="txt-field">
+                @Html.PasswordFor(n => n.Confirm_password, new { @placeholder = "Confirm Password" })
+                @Html.ValidationMessageFor(n => n.Confirm_password, "", new { @class = "pass-error" })
+            </div>
+            <div>
+                <input type="submit" id="btn-register" value="Sign Up" />
+                </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+

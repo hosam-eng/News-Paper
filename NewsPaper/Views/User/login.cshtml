@@ -1,0 +1,47 @@
+﻿@model NewsPaper.Models.User
+@{
+    Layout =null;
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>Log in</title>
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+</head>
+<body style="background-color:#F0F2F5">
+    <div id="formlogin-div">
+        <form action="login" method="post">
+            <div class="txt-field">
+                @Html.TextBoxFor(n => n.name, new { @placeholder = "Enter Your Name" })
+                @Html.ValidationMessageFor(n => n.name)
+            </div>
+            <div class="txt-field">
+                @Html.PasswordFor(n => n.password, new { @placeholder = "Password" })
+                @Html.ValidationMessageFor(n => n.password)
+            </div>
+            <div>
+                @Html.CheckBox("remember")Remember me
+            </div>
+            <div>
+                <input type="submit" id="btn-login" value="Log In" />
+            </div>
+            <div class="line"></div>
+            <div>
+                @Html.ActionLink("Create New Account", "register", null, new {@class
+           ="btn btn-success"})
+            </div>
+            <div>
+                <h5 style="color:darkred"> @ViewBag.mess</h5>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

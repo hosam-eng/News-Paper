@@ -1,0 +1,33 @@
+﻿@model NewsPaper.Models.User
+@{
+    ViewBag.Title = "edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="edit" method="post">
+    @Html.HiddenFor(n=>n.userID);
+    <table>
+        <tr>
+            <td>@Html.LabelFor(n => n.name)</td>
+            <td>@Html.TextBoxFor(n => n.name)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.email)</td>
+            <td>@Html.TextBoxFor(n => n.email)</td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Update" />
+            </td>
+            <td>
+                @Html.ActionLink("Change Password", "ch_pass", new { id = Model.userID }, new { @class = "btn btn-info" })
+            </td>
+            <td>
+                @Html.ActionLink("Back to Profile", "profile", new { id = Model.userID }, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+    </table>
+</form>
+
