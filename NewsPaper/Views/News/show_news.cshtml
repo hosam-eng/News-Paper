@@ -1,43 +1,43 @@
 ﻿@model SelectList
 @{
-    ViewBag.Title = "show_news";
+    ViewBag.Title = "News";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="modal text-md-center" id="d1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                Header
+                Post
             </div>
             <div class="modal-body" id="d2">
 
             </div>
             <div class="modal-footer">
-                <input type="button" value="close" data-dismiss="modal" />
+                <input type="button"class="btn btn-secondary" value="close" data-dismiss="modal" />
             </div>
         </div>
     </div>
 </div>
 
-@Html.DropDownList("newsid",Model,"..")
-<div id="ddl" >
-    <table class="table table-active">
+<div class="select" style="margin-bottom:10px">
+    @Html.DropDownList("newsid", Model, "..")
+</div>
+<div id="ddl">
+    @foreach (var item in ViewBag.news)
+    {
+        <div class="post">
+            <h4>@item.title</h4> <br />
+                @item._ref <br />
+            @Ajax.ActionLink("View details", "detail", new { id = item.newsID },
+              new AjaxOptions()
+                   {
+                UpdateTargetId = "d2",
+                InsertionMode = InsertionMode.Replace,
+                OnComplete = "show"
+            })
+        </div>
 
-        @foreach (var item in ViewBag.news)
-        {
-            <tr>
-                <td>@item.title</td>
-                <td>@item._ref</td>
-                <td>@Ajax.ActionLink("View details", "detail", new {id=item.newsID},
-                  new AjaxOptions(){
-                    UpdateTargetId="d2",
-                    InsertionMode=InsertionMode.Replace,
-                    OnComplete="show"
-                })</td>
-               
-            </tr>
-        }
-    </table>
+    }
 </div>
 <script>
     $("#newsid").on("change", function(){

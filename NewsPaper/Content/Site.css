@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+   margin:0;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -100,4 +99,99 @@ form .txt-field{
     border-radius: 6px;
     padding: 8px 0;
     border-color: #555 transparent transparent transparent;
+}
+.header {
+    width:100%;
+    height:56px;
+    background-color: #FFFFFF;
+    margin-bottom:0;
+}
+.search{
+    width:40%;
+    float:left;
+}
+.mynavbar {
+    width: 40%;
+    float: right;
+}
+.profile-pic {
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    border: none;
+    
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align:left;
+}
+.dropbtn {
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    background: url("/attach/logo.png");
+    background-size:100%;
+    border-radius: 40%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    border-radius: 10%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #F2F2F2;
+        color: black;
+        border-radius: 10%;
+    }
+.dropdown:hover .dropbtn {
+    background-color: #adadad;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    background: white;
+}
+
+.select select {
+    position: relative;
+    display: block;
+    width: 10em;
+    height: 2em;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+    padding-bottom: 10px;
+    background-color: #212529;
+    color: white;
+}
+
+.container-post {
+    width: 590px;
+    height: 1684.380px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align:center;
+}
+.post {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    text-align:left;
 }

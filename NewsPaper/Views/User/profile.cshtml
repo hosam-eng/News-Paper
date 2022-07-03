@@ -4,21 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.ActionLink("Edit Profile", "edit", new { id = ViewBag.id }, new { @class = "btn btn-primary" });
-@Html.ActionLink("Create News", "create", "News", null, new { @class = "btn btn-primary" });
-@Html.ActionLink("All News ", "show_news", "News", null, new { @class = "btn btn-primary" });
-<table class="table table-active">
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.newsID</td>
-            <td>@item.title</td>
-            <td>@item.description</td>
-            <td>@item._ref</td>
-            <td>@item.datehire</td>
-            <td><img src="~/attach/@item.photo" width="100" height="100" /></td>
-            <td>@Html.ActionLink("Edit", "edit_news", "News", new { id = item.newsID }, new { @class = "btn btn-primary" })</td>
-        </tr>
-    }
-</table>
+@foreach (var item in Model)
+{
+    <div class="post">
+        @item.datehire
+        @Html.ActionLink("Edit", "edit_news", "News", new { id = item.newsID }, new { @class = "btn btn-primary" })
+        <h4>@item.title,</h4><h6>@item._ref</h6><br />  <br />
+        <h6>@item.description</h6> <br />
+        <img src="~/attach/@item.photo" width="100%" />
+    </div>
+}
+
 

@@ -18,7 +18,7 @@
     <div id="formlogin-div">
         <form action="register" method="post">
             <div class="txt-field">
-                @Html.TextBoxFor(n => n.name, new {@placeholder="Name"})
+                @Html.TextBoxFor(n => n.name, new { @placeholder = "Name" })
                 @Html.ValidationMessageFor(n => n.name)
             </div>
             <div class="txt-field">
@@ -36,7 +36,10 @@
             </div>
             <div>
                 <input type="submit" id="btn-register" value="Sign Up" />
-                </div>
+            </div>
+            <div>
+                @Html.ActionLink("already have account?", "login", null, new {@class="link link-active"})
+            </div>
         </form>
     </div>
 
